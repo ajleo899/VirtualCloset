@@ -1,4 +1,4 @@
-package Adit.Adams;
+package com.example.virtualcloset;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;

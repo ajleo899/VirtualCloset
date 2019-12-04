@@ -3,12 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/darker_gray">
+    
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text = "Home_Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:background="#d9a950"
+        android:drawableTop="@drawable/ic_heart"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="5dp"
+        android:text="Favorites"
+        android:textColor="#e8e9e9"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="270dp" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:background="#d9a950"
+        android:drawableTop="@drawable/ic_shuffle"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="5dp"
+        android:text="Shuffle"
+        android:textColor="#e8e9e9"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="270dp" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:background="#d9a950"
+        android:drawableTop="@drawable/ic_wb_sunny_black_24dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="5dp"
+        android:text="Weather"
+        android:textColor="#e8e9e9"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="370dp" />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:background="#d9a950"
+        android:drawableTop="@drawable/ic_collections"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="5dp"
+        android:text="Collections"
+        android:textColor="#e8e9e9"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="370dp" />
+
 
 </RelativeLayout>
