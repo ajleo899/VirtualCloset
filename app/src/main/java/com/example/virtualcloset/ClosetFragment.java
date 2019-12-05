@@ -78,11 +78,11 @@ public class ClosetFragment extends Fragment {
                             if(deltaX > 0)
                             {
                                 System.out.println("Swipe to Left");
-                                pantsView.setImageDrawable(getResources().getDrawable(R.drawable.ic_shirttemplate));
+                                shirtView.setImageDrawable(getResources().getDrawable(R.drawable.ic_shirttemplate));
                             }else
                             {
                                 System.out.println("Swipe to Right");
-                                pantsView.setImageDrawable(getResources().getDrawable(R.drawable.ic_blackshirt));
+                                shirtView.setImageDrawable(getResources().getDrawable(R.drawable.ic_blackshirt));
                             }
                         }
 
