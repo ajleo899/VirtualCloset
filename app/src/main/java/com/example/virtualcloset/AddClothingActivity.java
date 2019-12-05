@@ -21,6 +21,7 @@ public class AddClothingActivity extends AppCompatActivity {
     Button retakeButton;
     Button addClothing;
     EditText enterName;
+    Closet additionCloset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +55,14 @@ public class AddClothingActivity extends AppCompatActivity {
             }
         });
 
+        additionCloset = (Closet) getIntent().getSerializableExtra("closet");
+
         addClothing = (Button) rootView.findViewById(R.id.acceptAddition);
         addClothing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCamera(v);
+                Closet.ClothingArticle newArticle = additionCloset.new ClothingArticle();
+
             }
         });
 
@@ -69,6 +73,10 @@ public class AddClothingActivity extends AppCompatActivity {
                     openCamera(v);
                 }
             });
+
+
+
+
     }
 
     public void openCamera(View v) {

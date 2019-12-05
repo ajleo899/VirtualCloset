@@ -2,6 +2,7 @@ package com.example.virtualcloset;
 
 import android.media.Image;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  * A single Closet object is made that keeps track of all user's clothes etc.
  * It also keeps track of which articles of clothing are currently presented on the closet screen.
  */
-public class Closet {
+public class Closet implements Serializable {
 
     private ClothingArticle activeTop;
     private ClothingArticle activeBottom;
@@ -143,7 +144,7 @@ public class Closet {
      * Each article has an associated user-specified String name, Image image, String type, and
      * String color.
      */
-    class ClothingArticle {
+    class ClothingArticle implements Serializable{
 
         private String name;
         private Image image;
@@ -205,7 +206,7 @@ public class Closet {
      * Each outfit also has a favorite flag denoting if it is a user favorite. Outfits also belong to collections,
      * so they have a String collections specifier denoting whether they belong to summer, fall, winter, or spring.
      */
-    class Outfit {
+    class Outfit implements Serializable{
 
         private ClothingArticle top;
         private ClothingArticle bottom;

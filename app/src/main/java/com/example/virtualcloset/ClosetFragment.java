@@ -15,6 +15,7 @@ public class ClosetFragment extends Fragment {
 
     private FloatingActionButton goToCloset;
     private FloatingActionButton addClothing;
+    private Closet virtualCloset;
 
     @Nullable
     @Override
@@ -326,6 +327,8 @@ public class ClosetFragment extends Fragment {
             }
         });
 
+        virtualCloset = new Closet();
+
         return rootView;
 }
 
@@ -336,6 +339,7 @@ public class ClosetFragment extends Fragment {
 
     public void openAddClothingActivity(View v) {
         Intent intent2 = new Intent(v.getContext(), AddClothingActivity.class);
+        intent2.putExtra("Closet", virtualCloset);
         startActivity(intent2);
     }
 
