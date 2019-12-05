@@ -177,7 +177,7 @@ public class Closet {
         }
 
     }
-    
+
 
     /**
      * Outfit class defines all outfits in the closet. Each outfit has an associated top, bottom, and shoe.
