@@ -12,7 +12,6 @@
         <activity android:name=".ListClosetActivity"></activity>
         <activity android:name=".CollectionsActivity" />
         <activity android:name=".AddClothingActivity" />
-        android:name="com.example.MyApplication"
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
