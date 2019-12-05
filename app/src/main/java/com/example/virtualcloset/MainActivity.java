@@ -7,11 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.virtualcloset.ClosetFragment;
-import com.example.virtualcloset.HomeFragment;
-import com.example.virtualcloset.ProfileFragment;
-import com.example.virtualcloset.R;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottom_nav = findViewById(R.id.bottom_navigation);
         bottom_nav.setOnNavigationItemSelectedListener(navListener);
+        if(savedInstanceState == null) {
+            bottom_nav.setSelectedItemId(R.id.nav_home);
+        }
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

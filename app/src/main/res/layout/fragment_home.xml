@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:background="@android:color/darker_gray">
 
-
     <Button
+        android:id="@+id/favoritesButton"
         android:layout_width="130dp"
         android:layout_height="60dp"
         android:background="#d9a950"
@@ -20,6 +20,7 @@
         android:layout_marginTop="270dp" />
 
     <Button
+        android:id="@+id/shuffleButton"
         android:layout_width="130dp"
         android:layout_height="60dp"
         android:background="#d9a950"
@@ -34,6 +35,7 @@
         android:layout_marginTop="270dp" />
 
     <Button
+        android:id="@+id/weatherButton"
         android:layout_width="130dp"
         android:layout_height="60dp"
         android:background="#d9a950"
@@ -48,6 +50,7 @@
         android:layout_marginTop="370dp" />
 
     <Button
+        android:id="@+id/collectionsButton"
         android:layout_width="130dp"
         android:layout_height="60dp"
         android:background="#d9a950"
