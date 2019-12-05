@@ -4,6 +4,23 @@
     android:layout_height="match_parent"
     android:background="@android:color/darker_gray">
 
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_hangerlogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="Virtual Closet"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:textColor="#003366" />
+
     <Button
         android:id="@+id/favoritesButton"
         android:layout_width="130dp"
