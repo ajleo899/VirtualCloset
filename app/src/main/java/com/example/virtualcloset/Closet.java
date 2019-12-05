@@ -5,6 +5,11 @@ import android.media.Image;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+ * Closet class is a class that interacts with all articles of clothing and outfits on the app.
+ * A single Closet object is made that keeps track of all user's clothes etc.
+ * It also keeps track of which articles of clothing are currently presented on the closet screen.
+ */
 public class Closet {
 
     private ClothingArticle activeTop;
@@ -12,6 +17,22 @@ public class Closet {
     private ClothingArticle activeShoe;
     private ArrayList<ClothingArticle> allClothes;
     private ArrayList<Outfit> allOutfits;
+
+    public Closet() {
+        activeTop = null;
+        activeBottom = null;
+        activeShoe = null;
+        allClothes = new ArrayList<>();
+        allOutfits = new ArrayList<>();
+    }
+
+    public Closet(ClothingArticle activeTop, ClothingArticle activeBottom, ClothingArticle activeShoe, ArrayList<ClothingArticle> allClothes, ArrayList<Outfit> allOutfits) {
+        this.activeTop = activeTop;
+        this.activeBottom = activeBottom;
+        this.activeShoe = activeShoe;
+        this.allClothes = allClothes;
+        this.allOutfits = allOutfits;
+    }
 
     public ClothingArticle getActiveTop() {
         return activeTop;
