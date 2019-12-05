@@ -2,6 +2,7 @@ package com.example.virtualcloset;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -57,15 +58,6 @@ public class AddClothingActivity extends AppCompatActivity {
 
         additionCloset = (Closet) getIntent().getSerializableExtra("closet");
 
-        addClothing = (Button) rootView.findViewById(R.id.acceptAddition);
-        addClothing.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Closet.ClothingArticle newArticle = additionCloset.new ClothingArticle();
-
-            }
-        });
-
         retakeButton = (Button) rootView.findViewById(R.id.retakePhoto);
         retakeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -74,6 +66,16 @@ public class AddClothingActivity extends AppCompatActivity {
                 }
             });
 
+        addClothing = (Button) rootView.findViewById(R.id.acceptAddition);
+        addClothing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Closet.ClothingArticle newArticle = additionCloset.new ClothingArticle();
+                //Closet.ClothingArticle newArticle = additionCloset.new ClothingArticle(enterName.getText().toString(), ((BitmapDrawable)imagePreview.getDrawable()).getBitmap(), "Shirt", "Blue");
+                additionCloset.addClothing(newArticle);
+                finish();
+            }
+        });
 
 
 

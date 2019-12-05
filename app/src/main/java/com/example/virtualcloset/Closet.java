@@ -1,5 +1,6 @@
 package com.example.virtualcloset;
 
+import android.graphics.Bitmap;
 import android.media.Image;
 
 import java.io.Serializable;
@@ -147,7 +148,7 @@ public class Closet implements Serializable {
     class ClothingArticle implements Serializable{
 
         private String name;
-        private Image image;
+        private Bitmap image;
         private String type;
         private String color;
 
@@ -158,7 +159,7 @@ public class Closet implements Serializable {
             color = "";
         }
 
-        public ClothingArticle(String n, Image i, String t, String c) {
+        public ClothingArticle(String n, Bitmap i, String t, String c) {
             name = n;
             image = i;
             type = t;
@@ -173,11 +174,11 @@ public class Closet implements Serializable {
             name = s;
         }
 
-        public Image getImage() {
+        public Bitmap getImage() {
             return image;
         }
 
-        public void setImage(Image i) {
+        public void setImage(Bitmap i) {
             image = i;
         }
 
