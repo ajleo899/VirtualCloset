@@ -18,6 +18,8 @@ public class ClosetFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_closet, container, false);
         ImageView shirtView = (ImageView) rootView.findViewById(R.id.imageView);
+        ImageView pantsView = (ImageView) rootView.findViewById(R.id.imageView2);
+        ImageView shoesView = (ImageView) rootView.findViewById(R.id.imageView3);
         final GestureDetector gesture = new GestureDetector(getActivity(),
                 new GestureDetector.SimpleOnGestureListener() {
                     @Override
@@ -58,7 +60,21 @@ public class ClosetFragment extends Fragment {
                     }
                 });
 
-        rootView.setOnTouchListener(new View.OnTouchListener() {
+        shirtView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return gesture.onTouchEvent(event);
+            }
+        });
+
+        pantsView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return gesture.onTouchEvent(event);
+            }
+        });
+
+        shoesView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 return gesture.onTouchEvent(event);
