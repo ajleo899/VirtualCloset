@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_pantstemplate" />
-                            <entry key="sourceFile" value="C:\Users\Blakes Omen\VirtualCloset\pantstemplate.svg" />
+                            <entry key="outputName" value="ic_gotocloset" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/goToCloset.svg" />
                           </map>
                         </option>
                       </PersistentState>

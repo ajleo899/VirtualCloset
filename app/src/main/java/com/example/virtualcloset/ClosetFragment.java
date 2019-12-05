@@ -1,9 +1,11 @@
 package com.example.virtualcloset;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class ClosetFragment extends Fragment {
+
+    private FloatingActionButton goToCloset;
 
     @Nullable
     @Override
@@ -81,6 +85,19 @@ public class ClosetFragment extends Fragment {
             }
         });
 
+        goToCloset = (FloatingActionButton) rootView.findViewById(R.id.goToListCloset);
+        goToCloset.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            openListClosetActivity(v);
+        }
+    });
+
         return rootView;
+}
+
+    public void openListClosetActivity(View v) {
+        Intent intent = new Intent(v.getContext(), ListClosetActivity.class);
+        startActivity(intent);
     }
 }

@@ -61,5 +61,15 @@
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_input_add" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/goToListCloset"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="50dp"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:src="@drawable/ic_gotocloset"/>
+
 
 </RelativeLayout>
