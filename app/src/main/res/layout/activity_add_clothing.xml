@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddClothingActivity">
+
+    <LinearLayout
+        android:layout_width="357dp"
+        android:layout_height="638dp"
+        android:layout_marginTop="1dp"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp">
+
+        <ImageView
+            android:id="@+id/clothingPreview"
+            android:layout_width="match_parent"
+            android:layout_height="345dp"
+            tools:srcCompat="@drawable/ic_blackshirt" />
+
+        <Button
+            android:id="@+id/retakePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retake Photo" />
+
+        <EditText
+            android:id="@+id/enterName"
+            android:layout_width="match_parent"
+            android:layout_height="78dp"
+            android:hint="Name (Dark Blue ECE Shirt)"
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/articleColor"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:gravity="center_vertical"
+            android:text="Color: "
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/acceptAddition"
+            android:layout_width="195dp"
+            android:layout_height="73dp"
+            android:text="Add Clothing" />
+    </LinearLayout>
+</RelativeLayout>

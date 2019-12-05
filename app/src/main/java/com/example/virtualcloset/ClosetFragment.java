@@ -1,7 +1,6 @@
 package com.example.virtualcloset;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,22 +9,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.*;
-import android.widget.Button;
 import android.widget.ImageView;
-
-import java.util.Random;
 
 public class ClosetFragment extends Fragment {
 
     private FloatingActionButton goToCloset;
+    private FloatingActionButton addClothing;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_closet, container, false);
-        final ImageView shirtView = (ImageView) rootView.findViewById(R.id.imageView);
-        final ImageView pantsView = (ImageView) rootView.findViewById(R.id.imageView2);
-        final ImageView shoesView = (ImageView) rootView.findViewById(R.id.imageView3);
+        final ImageView shirtView = (ImageView) rootView.findViewById(R.id.shirtTemplate);
+        final ImageView pantsView = (ImageView) rootView.findViewById(R.id.pantsTemplate);
+        final ImageView shoesView = (ImageView) rootView.findViewById(R.id.shoesTemplate);
         final GestureDetector gesture1 = new GestureDetector(getActivity(),
                 new GestureDetector.SimpleOnGestureListener() {
 
@@ -321,6 +318,14 @@ public class ClosetFragment extends Fragment {
         }
     });
 
+        addClothing = (FloatingActionButton) rootView.findViewById(R.id.addClothing);
+        addClothing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAddClothingActivity(v);
+            }
+        });
+
         return rootView;
 }
 
@@ -328,4 +333,11 @@ public class ClosetFragment extends Fragment {
         Intent intent = new Intent(v.getContext(), ListClosetActivity.class);
         startActivity(intent);
     }
+
+    public void openAddClothingActivity(View v) {
+        Intent intent2 = new Intent(v.getContext(), AddClothingActivity.class);
+        startActivity(intent2);
+    }
+
+
 }
