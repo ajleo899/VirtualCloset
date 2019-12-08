@@ -13,10 +13,19 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Closet closet;
+    private Bundle closetBundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        closet = new Closet();
+
+        closetBundle = new Bundle();
+        closetBundle.putSerializable("closet", closet);
+
 
         BottomNavigationView bottom_nav = findViewById(R.id.bottom_navigation);
         bottom_nav.setOnNavigationItemSelectedListener(navListener);
@@ -34,12 +43,15 @@ public class MainActivity extends AppCompatActivity {
                     switch (menuItem.getItemId()) {
                         case R.id.nav_home:
                             selectedFragment = new HomeFragment();
+                            selectedFragment.setArguments(closetBundle);
                             break;
                         case R.id.nav_closet:
                             selectedFragment = new ClosetFragment();
+                            selectedFragment.setArguments(closetBundle);
                             break;
                         case R.id.nav_profile:
                             selectedFragment = new ProfileFragment();
+                            selectedFragment.setArguments(closetBundle);
                             break;
                     }
 

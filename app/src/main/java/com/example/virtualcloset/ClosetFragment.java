@@ -15,12 +15,15 @@ public class ClosetFragment extends Fragment {
 
     private FloatingActionButton goToCloset;
     private FloatingActionButton addClothing;
-    private Closet virtualCloset;
+    private Closet closet;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_closet, container, false);
+
+        closet = (Closet) this.getArguments().getSerializable("closet");
+
         final ImageView shirtView = (ImageView) rootView.findViewById(R.id.shirtTemplate);
         final ImageView pantsView = (ImageView) rootView.findViewById(R.id.pantsTemplate);
         final ImageView shoesView = (ImageView) rootView.findViewById(R.id.shoesTemplate);
@@ -327,20 +330,26 @@ public class ClosetFragment extends Fragment {
             }
         });
 
-        virtualCloset = new Closet();
-
         return rootView;
 }
 
     public void openListClosetActivity(View v) {
         Intent intent = new Intent(v.getContext(), ListClosetActivity.class);
+<<<<<<< HEAD
         intent.putExtra("closet", virtualCloset);
+=======
+        intent.putExtra("closet", closet);
+>>>>>>> afe7561d86678685182b28500ea4dcb2f5a66dd3
         startActivity(intent);
     }
 
     public void openAddClothingActivity(View v) {
         Intent intent2 = new Intent(v.getContext(), AddClothingActivity.class);
+<<<<<<< HEAD
         intent2.putExtra("closet", virtualCloset);
+=======
+        intent2.putExtra("closet", closet);
+>>>>>>> afe7561d86678685182b28500ea4dcb2f5a66dd3
         startActivity(intent2);
     }
 
