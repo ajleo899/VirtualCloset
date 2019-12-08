@@ -70,6 +70,9 @@ public class BottomsTabFragment extends Fragment {
         final ListView bottomsListView = (ListView) rootView.findViewById(R.id.bottomsListView);
         closet = (Closet) this.getArguments().getSerializable("closet");
 
+        final ClothingListAdapter adapter = new ClothingListAdapter(getContext(), closet.getAllBottoms());
+        bottomsListView.setAdapter(adapter);
+
         return rootView;
     }
 

@@ -25,11 +25,12 @@ public class ListClosetActivity extends AppCompatActivity implements BottomsTabF
         tabLayout.setTabGravity(tabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+
+        closet = (Closet) getIntent().getSerializableExtra("closet");
+
         final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount(), closet);
         viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        closet = (Closet) getIntent().getSerializableExtra("closet");
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

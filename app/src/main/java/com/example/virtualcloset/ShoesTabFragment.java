@@ -70,6 +70,9 @@ public class ShoesTabFragment extends Fragment {
         final ListView shoesListView = (ListView) rootView.findViewById(R.id.shoesListView);
         closet = (Closet) this.getArguments().getSerializable("closet");
 
+        final ClothingListAdapter adapter = new ClothingListAdapter(getContext(), closet.getAllShoes());
+        shoesListView.setAdapter(adapter);
+
         return rootView;
     }
 

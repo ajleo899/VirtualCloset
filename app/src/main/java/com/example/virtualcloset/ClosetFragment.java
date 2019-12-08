@@ -336,13 +336,11 @@ public class ClosetFragment extends Fragment {
     public void openListClosetActivity(View v) {
         Intent intent = new Intent(v.getContext(), ListClosetActivity.class);
         intent.putExtra("closet", closet);
-        intent.putExtra("closet", closet);
         startActivity(intent);
     }
 
     public void openAddClothingActivity(View v) {
         Intent intent2 = new Intent(v.getContext(), AddClothingActivity.class);
-        intent2.putExtra("closet", closet);
         intent2.putExtra("closet", closet);
         startActivity(intent2);
     }
