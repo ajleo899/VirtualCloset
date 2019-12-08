@@ -335,23 +335,15 @@ public class ClosetFragment extends Fragment {
 
     public void openListClosetActivity(View v) {
         Intent intent = new Intent(v.getContext(), ListClosetActivity.class);
-<<<<<<< HEAD
-        intent.putExtra("closet", virtualCloset);
-=======
         intent.putExtra("closet", closet);
->>>>>>> afe7561d86678685182b28500ea4dcb2f5a66dd3
+        intent.putExtra("closet", closet);
         startActivity(intent);
     }
 
     public void openAddClothingActivity(View v) {
         Intent intent2 = new Intent(v.getContext(), AddClothingActivity.class);
-<<<<<<< HEAD
-        intent2.putExtra("closet", virtualCloset);
-=======
         intent2.putExtra("closet", closet);
->>>>>>> afe7561d86678685182b28500ea4dcb2f5a66dd3
+        intent2.putExtra("closet", closet);
         startActivity(intent2);
     }
-
-
 }

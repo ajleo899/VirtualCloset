@@ -27,6 +27,7 @@ public class BottomsTabFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Closet closet;
 
     private OnFragmentInteractionListener mListener;
 
@@ -67,6 +68,7 @@ public class BottomsTabFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_bottoms_tab, container, false);
         final ListView bottomsListView = (ListView) rootView.findViewById(R.id.bottomsListView);
+        closet = (Closet) this.getArguments().getSerializable("closet");
 
         return rootView;
     }

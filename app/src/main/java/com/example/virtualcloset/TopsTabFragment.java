@@ -29,6 +29,7 @@ public class TopsTabFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Closet closet;
 
     private OnFragmentInteractionListener mListener;
 
@@ -69,7 +70,7 @@ public class TopsTabFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_tops_tab, container, false);
         final ListView topsListView = (ListView) rootView.findViewById(R.id.topsListView);
-
+        closet = (Closet) this.getArguments().getSerializable("closet");
 
         return rootView;
     }
