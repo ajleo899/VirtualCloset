@@ -139,6 +139,15 @@ public class Closet implements Serializable {
         return springOutfits;
     }
 
+    public ArrayList<Outfit> getFavoriteOutfits() {
+        ArrayList<Outfit> favOutfits = new ArrayList<>();
+        for(Outfit o : allOutfits) {
+            if(o.isFavorite)
+                favOutfits.add(o);
+        }
+        return favOutfits;
+    }
+
 
     /**
      * Clothing Article class defines each article of clothing, whether top, bottom, or shoe.
@@ -214,6 +223,7 @@ public class Closet implements Serializable {
         private ClothingArticle shoe;
         private boolean isFavorite;
         private String collection;
+        private String name;
 
 
         public Outfit() {
@@ -222,14 +232,16 @@ public class Closet implements Serializable {
             shoe = null;
             isFavorite = false;
             collection = "";
+            name = "";
         }
 
-        public Outfit(ClothingArticle top, ClothingArticle bottom, ClothingArticle shoe, boolean isFavorite, String collection) {
+        public Outfit(ClothingArticle top, ClothingArticle bottom, ClothingArticle shoe, boolean isFavorite, String collection, String name) {
             this.top = top;
             this.bottom = bottom;
             this.shoe = shoe;
             this.isFavorite = isFavorite;
             this.collection = collection;
+            this.name = name;
         }
 
         public ClothingArticle getTop() {
@@ -271,6 +283,14 @@ public class Closet implements Serializable {
 
         public void setCollection(String c) {
             collection = c;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName() {
+            this.name = name;
         }
     }
 

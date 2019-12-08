@@ -70,9 +70,14 @@ public class AddClothingActivity extends AppCompatActivity {
         addClothing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Closet.ClothingArticle newArticle = additionCloset.new ClothingArticle();
-                //Closet.ClothingArticle newArticle = additionCloset.new ClothingArticle(enterName.getText().toString(), ((BitmapDrawable)imagePreview.getDrawable()).getBitmap(), "Shirt", "Blue");
+                Closet.ClothingArticle newArticle = additionCloset.new ClothingArticle(enterName.getText().toString(), ((BitmapDrawable)imagePreview.getDrawable()).getBitmap(), "top", "Blue");
+                Closet.ClothingArticle newArticle2 = additionCloset.new ClothingArticle(enterName.getText().toString(), ((BitmapDrawable)imagePreview.getDrawable()).getBitmap(), "bottom", "Red");
+                Closet.ClothingArticle newArticle3 = additionCloset.new ClothingArticle(enterName.getText().toString(), ((BitmapDrawable)imagePreview.getDrawable()).getBitmap(), "shoe", "Green");
+
                 additionCloset.addClothing(newArticle);
+                additionCloset.addClothing(newArticle2);
+                additionCloset.addClothing(newArticle3);
+
                 finish();
             }
         });
