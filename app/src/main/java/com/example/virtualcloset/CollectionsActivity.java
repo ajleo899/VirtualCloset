@@ -10,10 +10,14 @@ public class CollectionsActivity extends AppCompatActivity implements FavoritesT
         SpringTabFragment.OnFragmentInteractionListener, SummerTabFragment.OnFragmentInteractionListener,
         FallTabFragment.OnFragmentInteractionListener, WinterTabFragment.OnFragmentInteractionListener {
 
+    private Closet closet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collections);
+
+        closet = (Closet) this.getIntent().getSerializableExtra("closet");
 
         TabLayout collectionsTabLayout = (TabLayout) findViewById(R.id.collectionstablayout);
         collectionsTabLayout.addTab(collectionsTabLayout.newTab().setText("Favorites"));
@@ -25,7 +29,7 @@ public class CollectionsActivity extends AppCompatActivity implements FavoritesT
         collectionsTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         final ViewPager collectionsViewPager = (ViewPager) findViewById(R.id.collections_pager);
-        final CollectionsPagerAdapter collectionsAdapter = new CollectionsPagerAdapter(getSupportFragmentManager(), collectionsTabLayout.getTabCount());
+        final CollectionsPagerAdapter collectionsAdapter = new CollectionsPagerAdapter(getSupportFragmentManager(), collectionsTabLayout.getTabCount(), closet);
         collectionsViewPager.setAdapter(collectionsAdapter);
         collectionsViewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(collectionsTabLayout));
 

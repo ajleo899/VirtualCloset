@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import java.io.ByteArrayOutputStream;
+
 public class AddClothingActivity extends AppCompatActivity {
 
     ImageView imagePreview;
@@ -70,14 +72,16 @@ public class AddClothingActivity extends AppCompatActivity {
         addClothing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Closet.ClothingArticle newArticle = additionCloset.new ClothingArticle(enterName.getText().toString(), ((BitmapDrawable)imagePreview.getDrawable()).getBitmap(), "top", "Blue");
-                Closet.ClothingArticle newArticle2 = additionCloset.new ClothingArticle(enterName.getText().toString(), ((BitmapDrawable)imagePreview.getDrawable()).getBitmap(), "bottom", "Red");
-                Closet.ClothingArticle newArticle3 = additionCloset.new ClothingArticle(enterName.getText().toString(), ((BitmapDrawable)imagePreview.getDrawable()).getBitmap(), "shoe", "Green");
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                ((BitmapDrawable)imagePreview.getDrawable()).getBitmap().compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
 
+                Closet.ClothingArticle newArticle = additionCloset.new ClothingArticle(enterName.getText().toString(), byteArray, "top", "Blue");
                 additionCloset.addClothing(newArticle);
-                additionCloset.addClothing(newArticle2);
-                additionCloset.addClothing(newArticle3);
 
+                Intent intent = new Intent();
+                intent.putExtra("newCloset",additionCloset);
+                setResult(10, intent);
                 finish();
             }
         });

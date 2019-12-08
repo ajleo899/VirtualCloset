@@ -1,6 +1,7 @@
 package com.example.virtualcloset;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,10 +35,12 @@ public class OutfitListAdapter extends ArrayAdapter<Closet.Outfit> {
         ImageView pantsView = (ImageView) rowView.findViewById(R.id.outfitBottom);
         ImageView shoesView = (ImageView) rowView.findViewById(R.id.outfitShoe);
         textView.setText(outfits.get(position).getName());
-        shirtView.setImageBitmap(outfits.get(position).getTop().getImage());
-        shirtView.setImageBitmap(outfits.get(position).getBottom().getImage());
-        shirtView.setImageBitmap(outfits.get(position).getShoe().getImage());
-
+        byte[] topByteArray = outfits.get(position).getTop().getImage();
+        byte[] bottomByteArray = outfits.get(position).getBottom().getImage();
+        byte[] shoeByteArray = outfits.get(position).getShoe().getImage();
+        shirtView.setImageBitmap(BitmapFactory.decodeByteArray(topByteArray, 0, topByteArray.length));
+        shirtView.setImageBitmap(BitmapFactory.decodeByteArray(bottomByteArray, 0, bottomByteArray.length));
+        shirtView.setImageBitmap(BitmapFactory.decodeByteArray(shoeByteArray, 0, shoeByteArray.length));
         return rowView;
     }
 

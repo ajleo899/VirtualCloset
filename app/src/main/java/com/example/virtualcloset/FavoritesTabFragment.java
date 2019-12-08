@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -27,6 +30,7 @@ public class FavoritesTabFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Closet closet;
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,9 +69,14 @@ public class FavoritesTabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        closet = (Closet) this.getArguments().getSerializable("closet");
+
         View rootView =  inflater.inflate(R.layout.fragment_favorites_tab, container, false);
-        final ExpandableListView listView = (ExpandableListView)rootView.findViewById(R.id.favoritesListView);
-        
+        final ListView listView = (ListView)rootView.findViewById(R.id.favoritesListView);
+        ArrayList<Closet.Outfit> favoritesList = closet.getFavoriteOutfits();
+
+        final OutfitListAdapter adapter = new OutfitListAdapter(getContext(), favoritesList);
+        listView.setAdapter(adapter);
 
         return rootView;
     }

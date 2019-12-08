@@ -17,11 +17,14 @@ public class HomeFragment extends Fragment {
     private Button shuffleButton;
     private Button weatherButton;
     private Button collectionsButton;
+    private Closet closet;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        closet = (Closet) this.getArguments().getSerializable("closet");
+
         collectionsButton = (Button) rootView.findViewById(R.id.collectionsButton);
         collectionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +38,8 @@ public class HomeFragment extends Fragment {
 
     public void openCollectionsActivity(View v) {
         Intent intent = new Intent(v.getContext(), CollectionsActivity.class);
-        startActivity(intent);
+        intent.putExtra("closet", closet);
+        startActivityForResult(intent, 20);
 
     }
 }
