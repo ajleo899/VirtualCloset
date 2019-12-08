@@ -1,7 +1,9 @@
 package com.example.virtualcloset;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,12 +11,14 @@ import android.os.Bundle;
 public class ListClosetActivity extends AppCompatActivity implements BottomsTabFragment.OnFragmentInteractionListener,
         TopsTabFragment.OnFragmentInteractionListener, ShoesTabFragment.OnFragmentInteractionListener {
 
+    private Closet closet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_closet);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
+        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
         tabLayout.addTab(tabLayout.newTab().setText("Tops"));
         tabLayout.addTab(tabLayout.newTab().setText("Bottoms"));
         tabLayout.addTab(tabLayout.newTab().setText("Shoes"));
@@ -24,6 +28,8 @@ public class ListClosetActivity extends AppCompatActivity implements BottomsTabF
         final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        closet = (Closet) getIntent().getSerializableExtra("closet");
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 
 /**
@@ -64,7 +65,10 @@ public class ShoesTabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shoes_tab, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_shoes_tab, container, false);
+        final ListView shoesListView = (ListView) rootView.findViewById(R.id.shoesListView);
+
+        return rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
