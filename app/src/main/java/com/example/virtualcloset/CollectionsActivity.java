@@ -6,6 +6,13 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.virtualcloset.CollectionsTabs.CollectionsPagerAdapter;
+import com.example.virtualcloset.CollectionsTabs.FallTabFragment;
+import com.example.virtualcloset.CollectionsTabs.FavoritesTabFragment;
+import com.example.virtualcloset.CollectionsTabs.SpringTabFragment;
+import com.example.virtualcloset.CollectionsTabs.SummerTabFragment;
+import com.example.virtualcloset.CollectionsTabs.WinterTabFragment;
+
 public class CollectionsActivity extends AppCompatActivity implements FavoritesTabFragment.OnFragmentInteractionListener,
         SpringTabFragment.OnFragmentInteractionListener, SummerTabFragment.OnFragmentInteractionListener,
         FallTabFragment.OnFragmentInteractionListener, WinterTabFragment.OnFragmentInteractionListener {

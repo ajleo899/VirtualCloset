@@ -1,12 +1,15 @@
 package com.example.virtualcloset;
 
-import android.graphics.Color;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.virtualcloset.ListClosetTabs.BottomsTabFragment;
+import com.example.virtualcloset.ListClosetTabs.PagerAdapter;
+import com.example.virtualcloset.ListClosetTabs.ShoesTabFragment;
+import com.example.virtualcloset.ListClosetTabs.TopsTabFragment;
 
 public class ListClosetActivity extends AppCompatActivity implements BottomsTabFragment.OnFragmentInteractionListener,
         TopsTabFragment.OnFragmentInteractionListener, ShoesTabFragment.OnFragmentInteractionListener {

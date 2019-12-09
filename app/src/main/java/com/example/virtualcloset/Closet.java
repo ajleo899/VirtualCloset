@@ -154,7 +154,7 @@ public class Closet implements Serializable {
      * Each article has an associated user-specified String name, Image image, String type, and
      * String color.
      */
-    class ClothingArticle implements Serializable{
+    public class ClothingArticle implements Serializable{
 
         private String name;
         private byte[] image;
@@ -216,7 +216,7 @@ public class Closet implements Serializable {
      * Each outfit also has a favorite flag denoting if it is a user favorite. Outfits also belong to collections,
      * so they have a String collections specifier denoting whether they belong to summer, fall, winter, or spring.
      */
-    class Outfit implements Serializable{
+    public class Outfit implements Serializable{
 
         private ClothingArticle top;
         private ClothingArticle bottom;
